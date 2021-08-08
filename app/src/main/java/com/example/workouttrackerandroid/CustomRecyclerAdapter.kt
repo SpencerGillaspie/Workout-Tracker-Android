@@ -11,6 +11,9 @@ class CustomRecyclerAdapter(var exercises: MutableList<ExerciseObject>):
     RecyclerView.Adapter<CustomRecyclerAdapter.ViewHolder>(){
 
 
+        /*
+            Wrapper for a view that the recycler will display
+         */
         class ViewHolder(view: View): RecyclerView.ViewHolder(view){
             lateinit var nameView: TextView;
             lateinit var repsView: TextView;
@@ -24,7 +27,7 @@ class CustomRecyclerAdapter(var exercises: MutableList<ExerciseObject>):
                 weightView = view.findViewById(R.id.weightTextView);
             }
         }
-
+    
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // Get the exercise view
         val exerciseView = LayoutInflater.from(parent.context)
