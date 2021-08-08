@@ -3,39 +3,82 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
+
+    <TextView
+        android:id="@+id/nameTextViewLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercise Name: "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/repsTextViewLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Reps: "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTextViewLabel" />
+
+    <TextView
+        android:id="@+id/setsTextViewLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of Sets: "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repsTextViewLabel"/>
+
+    <TextView
+        android:id="@+id/weightTextViewLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight (lbs.): "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/setsTextViewLabel"/>
 
     <TextView
         android:id="@+id/nameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="name placeholder"
+        android:textSize="20sp"
+        android:layout_marginStart="10sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nameTextViewLabel"/>
 
     <TextView
         android:id="@+id/repsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Number of Reps"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameTextView" />
+        android:text="reps placeholder"
+        android:textSize="20sp"
+        android:layout_marginStart="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+        app:layout_constraintStart_toEndOf="@+id/repsTextViewLabel"/>
 
     <TextView
         android:id="@+id/setsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Number of Sets"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/repsTextView"/>
+        android:text="reps placeholder"
+        android:textSize="20sp"
+        android:layout_marginStart="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/repsTextView"
+        app:layout_constraintStart_toEndOf="@+id/setsTextViewLabel"/>
 
     <TextView
         android:id="@+id/weightTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Weight lbs."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/setsTextView"/>
-
+        android:text="weight placeholder"
+        android:textSize="20sp"
+        android:layout_marginStart="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/setsTextView"
+        app:layout_constraintStart_toEndOf="@+id/weightTextViewLabel"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
