@@ -25,8 +25,9 @@ class MainActivity : AppCompatActivity() {
 
         // When button is clicked, add whatever is entered to the list
         button.setOnClickListener {
-            AddExercise(exercises);
-            adapter.notifyItemChanged(exercises.size - 1);
+            ShowDialog();
+            //AddExercise(exercises);
+            //adapter.notifyItemChanged(exercises.size - 1);
         }
     }
 
@@ -46,5 +47,11 @@ class MainActivity : AppCompatActivity() {
                 setsText.toString().toInt(), weightText.toString().toDouble()
             )
         )
+    }
+
+    private fun ShowDialog(){
+        val fragment = ExerciseInputDialog();
+
+        fragment.show(supportFragmentManager, "input");
     }
 }
