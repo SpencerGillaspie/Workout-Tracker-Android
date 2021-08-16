@@ -20,6 +20,7 @@ class ExerciseInputDialog: DialogFragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context);
 
+        // Make sure that the context has implemented onDialogPosClick()
         try {
             listener = context as ExerciseInputDialogListener;
         } catch (e: ClassCastException){
@@ -36,7 +37,7 @@ class ExerciseInputDialog: DialogFragment() {
 
             build.setMessage("Input a New Exercise");
 
-            build.setPositiveButton("Add",
+            build.setPositiveButton("Confirm",
                 DialogInterface.OnClickListener { _, _ ->
                     listener.onDialogPosClick(this, inflater);
                 });

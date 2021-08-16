@@ -8,5 +8,5 @@ data class ExerciseObject(
     var numberOfReps: Int,
     var numberOfSets: Int,
     var weight: Double
-){
+    ){
 }

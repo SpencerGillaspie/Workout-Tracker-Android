@@ -3,11 +3,14 @@ package com.example.workouttrackerandroid
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentActivity
 
-class CustomRecyclerAdapter(var exercises: MutableList<ExerciseObject>):
+class CustomRecyclerAdapter(var exercises: MutableList<ExerciseObject>,
+                            var listener: EditButtonClick):
     RecyclerView.Adapter<CustomRecyclerAdapter.ViewHolder>(){
 
 
@@ -15,17 +18,12 @@ class CustomRecyclerAdapter(var exercises: MutableList<ExerciseObject>):
             Wrapper for a view that the recycler will display
          */
         class ViewHolder(view: View): RecyclerView.ViewHolder(view){
-            lateinit var nameView: TextView;
-            lateinit var repsView: TextView;
-            lateinit var setsView: TextView;
-            lateinit var weightView: TextView;
-
-            init {
-                nameView = view.findViewById(R.id.nameTextView);
-                repsView = view.findViewById(R.id.repsTextView);
-                setsView = view.findViewById(R.id.setsTextView);
-                weightView = view.findViewById(R.id.weightTextView);
-            }
+            var nameView: TextView = view.findViewById(R.id.nameTextView);
+            var repsView: TextView = view.findViewById(R.id.repsTextView);
+            var setsView: TextView = view.findViewById(R.id.setsTextView);
+            var weightView: TextView = view.findViewById(R.id.weightTextView);
+            var editButton: Button = view.findViewById(R.id.editButton);
+            var deleteButton: Button = view.findViewById(R.id.deleteButton);
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -42,6 +40,16 @@ class CustomRecyclerAdapter(var exercises: MutableList<ExerciseObject>):
         holder.repsView.text = exercises[position].numberOfReps.toString();
         holder.setsView.text = exercises[position].numberOfSets.toString();
         holder.weightView.text = exercises[position].weight.toString();
+
+        holder.editButton.setOnClickListener {
+            listener.onEditClick(it, holder, position);
+            this.notifyItemChanged(position);
+        };
+
+        holder.deleteButton.setOnClickListener {
+            exercises.removeAt(position);
+            this.notifyItemRemoved(position);
+        }
     }
 
     override fun getItemCount(): Int {
