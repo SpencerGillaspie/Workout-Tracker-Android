@@ -15,21 +15,21 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
-        android:id="@+id/repsEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Reps"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@+id/nameEditText"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <EditText
         android:id="@+id/setsEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Sets"
         android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/repsEditText"
+        app:layout_constraintTop_toBottomOf="@id/nameEditText"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/repsEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Reps"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/setsEditText"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
@@ -38,7 +38,18 @@
         android:layout_height="wrap_content"
         android:hint="Weight"
         android:inputType="numberDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/setsEditText"
+        app:layout_constraintTop_toBottomOf="@+id/repsEditText"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/poundTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="lbs."
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintStart_toEndOf="@+id/weightEditText"
+        app:layout_constraintBottom_toBottomOf="@+id/weightEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

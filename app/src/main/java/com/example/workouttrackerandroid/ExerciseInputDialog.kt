@@ -35,7 +35,7 @@ class ExerciseInputDialog: DialogFragment() {
 
             build.setView(inflater);
 
-            build.setMessage("Input a New Exercise");
+            build.setMessage("Input an Exercise");
 
             build.setPositiveButton("Confirm",
                 DialogInterface.OnClickListener { _, _ ->
